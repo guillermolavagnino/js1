@@ -13,4 +13,7 @@
     
     {"id":7,"nombre":"Brócoli","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":4.500,"miniatura":"img/item-7-brocoli.jpg"},
     
-    {"id":8,"nombre":"Acelga","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":1.300,"miniatura":"img/item-8-acelga.jpg"}]}
+    {"id":8,"nombre":"Acelga","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":1.300,"miniatura":"img/item-8-acelga.jpg"}],
+  "total": 8,
+  "skip": 0,
+  "limit": 8}
