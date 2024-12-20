@@ -1,19 +1,19 @@
 {"productos":[
-    {"id":1,"nombre":"Espinaca","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":1.999,"miniatura":"img/item-1-espinaca.jpg"},
+    {"id":1,"nombre":"Espinaca","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":1999,"miniatura":"img/item-1-espinaca.jpg"},
     
-    {"id":2,"nombre":"Uvas","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Frutas","precio":6.000,"miniatura":"img/item-2-uvas.jpg"},
+    {"id":2,"nombre":"Uvas","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Frutas","precio":6000,"miniatura":"img/item-2-uvas.jpg"},
     
-    {"id":3,"nombre":"Apio","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":2.300,"miniatura":"img/item-3-apio.jpg"},
+    {"id":3,"nombre":"Apio","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":2300,"miniatura":"img/item-3-apio.jpg"},
     
-    {"id":4,"nombre":"Manzanas","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Frutas","precio":3.500,"miniatura":"img/item-4-manzanas.jpg"},
+    {"id":4,"nombre":"Manzanas","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Frutas","precio":3500,"miniatura":"img/item-4-manzanas.jpg"},
 
-    {"id":5,"nombre":"Bananas","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Frutas","precio":2.500,"miniatura":"img/item-5-bananas.jpg"},
+    {"id":5,"nombre":"Bananas","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Frutas","precio":2500,"miniatura":"img/item-5-bananas.jpg"},
 
-    {"id":6,"nombre":"Naranjas","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Frutas","precio":1.200,"miniatura":"img/item-6-naranjas.jpg"},
+    {"id":6,"nombre":"Naranjas","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Frutas","precio":1200,"miniatura":"img/item-6-naranjas.jpg"},
     
-    {"id":7,"nombre":"Brócoli","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":4.500,"miniatura":"img/item-7-brocoli.jpg"},
+    {"id":7,"nombre":"Brócoli","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":4500,"miniatura":"img/item-7-brocoli.jpg"},
     
-    {"id":8,"nombre":"Acelga","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":1.300,"miniatura":"img/item-8-acelga.jpg"}],
+    {"id":8,"nombre":"Acelga","descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt","categoria":"Verduras","precio":1300,"miniatura":"img/item-8-acelga.jpg"}],
   "total": 8,
   "skip": 0,
   "limit": 8}
