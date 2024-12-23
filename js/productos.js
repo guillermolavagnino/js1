@@ -53,9 +53,24 @@ function agregarProducto(id) {
         productoEnCarrito.cantidad++;
     } else {
         carrito.push({producto});
+        Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Producto agregado al carrito!",
+                showConfirmButton: false,
+                timer: 1000
+              });
     }
+
+  let contador = Object.keys(carrito).length;
+  document.getElementById('carrito-contador').innerHTML = contador;
 
   console.log(producto);
   //console.log(carrito);
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let contador = Object.keys(carrito).length;
+document.getElementById('carrito-contador').innerHTML = contador;
+localStorage.setItem('carrito', JSON.stringify(carrito));
