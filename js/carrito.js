@@ -8,7 +8,6 @@ function actualizarCarrito() {
   let listaCarrito = document.getElementById('lista-carrito'); 
   //listaCarrito.innerHTML = "";
   let totalcarrito = parseInt(0);
-  let contador = 0;
 
   for (let i = 0; i < carrito.length; i++) {
     let producto = carrito[i];
@@ -20,7 +19,10 @@ function actualizarCarrito() {
     totalp = producto.producto.precio * 1;
     total = new Intl.NumberFormat("de-DE").format(totalp);
 
-    totalcarrito = totalcarrito + total;
+    totalcarrito = totalcarrito + totalp;
+    totalcarritow = new Intl.NumberFormat("de-DE").format(totalcarrito);
+    totalcarritomasenvio = totalcarrito + 1000;
+    totalcarritomasenvio = new Intl.NumberFormat("de-DE").format(totalcarritomasenvio);
 
     listaCarrito.innerHTML += `<tr>
                                 <td>
@@ -53,12 +55,14 @@ function actualizarCarrito() {
                                     </button>
                                 </td>
                             </tr>`;
-    contador++;
   }
 
-  document.getElementById('subtotalcarrito').innerHTML = totalcarrito;
+  document.getElementById('subtotalcarrito').innerHTML = '$' + totalcarritow;
+  document.getElementById('totalcarritomasenvio').innerHTML = '$' + totalcarritomasenvio;
+
   document.getElementById('vaciar-carrito').addEventListener('click', vaciarCarrito);
 
+  let contador = Object.keys(carrito).length;
   document.getElementById('carrito-contador').innerHTML = contador;
 
   localStorage.setItem('carrito', JSON.stringify(carrito));
