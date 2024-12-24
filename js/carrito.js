@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() { 
+if (document.getElementById('lista-carrito')) {
   actualizarCarrito();
-});
+};
 
-function actualizarCarrito() {
+function actualizarCarrito() { 
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
   //console.log(carrito);
-  let listaCarrito = document.getElementById('lista-carrito'); 
-  //listaCarrito.innerHTML = "";
+  let listaCarrito = document.getElementById('lista-carrito');
+  listaCarrito.innerHTML = "";
   let totalcarrito = parseInt(0);
 
   for (let i = 0; i < carrito.length; i++) {
@@ -50,7 +50,7 @@ function actualizarCarrito() {
                                     <p class="mb-0 mt-4">$${total}</p>
                                 </td>
                                 <td>
-                                    <button class="btn btn-md rounded-circle bg-light border mt-4" id="eliminarDelCarrito-${producto.producto.id}" >
+                                    <button class="btn btn-md rounded-circle bg-light border mt-4" onclick="eliminarDelCarrito(${producto.producto.id})">
                                         <i class="fa fa-times text-danger"></i>
                                     </button>
                                 </td>
@@ -68,8 +68,37 @@ function actualizarCarrito() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+
+
 function vaciarCarrito() {
     localStorage.removeItem('carrito');
     actualizarCarrito();
+}
+
+function eliminarDelCarrito(id) {
+  console.log(id);
+
+  // Cargamos el carrito desde localStorage
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Encontramos el índice del producto a eliminar usando findIndex
+  let index = carrito.findIndex(producto => producto.producto.id === id);
+
+  if (index !== -1) {
+    // Si el producto existe en el carrito, lo eliminamos
+    carrito.splice(index, 1);
+    
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "El producto fue eliminado del carrito",
+      showConfirmButton: false,
+      timer: 1000
+    });
+
+    // Guardamos el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito();
+  }
 }
 
