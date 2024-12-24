@@ -54,7 +54,7 @@ function agregarProducto(id) {
     } else {
         carrito.push({producto});
         Swal.fire({
-                position: "top-center",
+                position: "center",
                 icon: "success",
                 title: "Producto agregado al carrito!",
                 showConfirmButton: false,
