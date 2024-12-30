@@ -16,7 +16,7 @@ function actualizarCarrito() {
     let precio = "";
     precio = new Intl.NumberFormat("de-DE").format(producto.producto.precio);
     let total = "";
-    totalp = producto.producto.precio * 1;
+    totalp = producto.producto.precio * producto.producto.cantidad;
     total = new Intl.NumberFormat("de-DE").format(totalp);
 
     totalcarrito = totalcarrito + totalp;
@@ -38,7 +38,7 @@ function actualizarCarrito() {
                                             <i class="fa fa-minus"></i>
                                             </button>
                                         </div>
-                                        <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                                        <input type="text" class="form-control form-control-sm text-center border-0" value="${producto.producto.cantidad}">
                                         <div class="input-group-btn">
                                             <button class="btn btn-sm btn-plus rounded-circle bg-light border">
                                                 <i class="fa fa-plus"></i>
