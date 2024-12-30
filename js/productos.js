@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const contenedor = document.getElementById("contenedor-productos");
 
-      productos = [];
+      productos = []; // array
       //contenedor.innerHTML = typeof data; // object
 
       data.productos.forEach(function(producto) {
@@ -44,14 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function agregarProducto(id) { 
   console.log(id);
-  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || []; // [] teoricamente es un array
+  //console.log(typeof carrito); // object
 
   const producto = productos.find(p => p.id === id);
-  const productoEnCarrito = carrito.find(p => p.id === id);
+  const productoEnCarrito = carrito.find(producto => producto.producto.id === id); // OK
 
     if (productoEnCarrito) {
-        productoEnCarrito.cantidad++;
+      productoEnCarrito.producto.cantidad += 1;
+        Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Producto agregado al carrito!",
+                showConfirmButton: false,
+                timer: 1000
+              });
+
     } else {
+        producto.cantidad = 1;
         carrito.push({producto});
         Swal.fire({
                 position: "center",
@@ -64,9 +74,7 @@ function agregarProducto(id) {
 
   let contador = Object.keys(carrito).length;
   document.getElementById('carrito-contador').innerHTML = contador;
-
-  console.log(producto);
-  //console.log(carrito);
+  
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
