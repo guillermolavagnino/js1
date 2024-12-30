@@ -34,13 +34,13 @@ function actualizarCarrito() {
                                 <td>
                                     <div class="input-group quantity mt-4" style="width: 100px;">
                                         <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
+                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border" onclick="disminuirCantidad(${producto.producto.id})" >
                                             <i class="fa fa-minus"></i>
                                             </button>
                                         </div>
                                         <input type="text" class="form-control form-control-sm text-center border-0" value="${producto.producto.cantidad}">
                                         <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border" onclick="aumentarCantidad(${producto.producto.id})">
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                         </div>
@@ -102,3 +102,46 @@ function eliminarDelCarrito(id) {
   }
 }
 
+function aumentarCantidad(id) {
+  console.log(id);
+
+  // Cargamos el carrito desde localStorage
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Encontramos el índice del producto a aumentar su cantidad usando findIndex
+  let index = carrito.findIndex(producto => producto.producto.id === id);
+
+  if (index !== -1) {
+    // Si el producto existe en el carrito, aumentamos la cantidad
+    carrito[index].producto.cantidad += 1;
+
+    // Guardamos el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito();
+  }
+
+}
+
+function disminuirCantidad(id) {
+  console.log(id);
+
+  // Cargamos el carrito desde localStorage
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Encontramos el índice del producto a aumentar su cantidad usando findIndex
+  let index = carrito.findIndex(producto => producto.producto.id === id);
+
+  if (index !== -1) {
+    // Si el producto existe en el carrito, disminuye la cantidad
+    if (carrito[index].producto.cantidad > 1) {
+      carrito[index].producto.cantidad -= 1;
+    } else {
+      carrito.splice(index, 1);
+    }
+
+    // Guardamos el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito();
+  }
+    
+}
