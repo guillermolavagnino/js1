@@ -72,13 +72,15 @@ function agregarProducto(id) {
               });
     }
 
-  let contador = Object.keys(carrito).length;
+  //let contador = Object.keys(carrito).length;
+  let contador = carrito.reduce((total, item) => total + item.producto.cantidad, 0);
   document.getElementById('carrito-contador').innerHTML = contador;
   
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-let contador = Object.keys(carrito).length;
+//let contador = Object.keys(carrito).length;
+let contador = carrito.reduce((total, item) => total + item.producto.cantidad, 0);
 document.getElementById('carrito-contador').innerHTML = contador;
 localStorage.setItem('carrito', JSON.stringify(carrito));
