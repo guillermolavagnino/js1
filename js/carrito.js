@@ -62,7 +62,8 @@ function actualizarCarrito() {
 
   document.getElementById('vaciar-carrito').addEventListener('click', vaciarCarrito);
 
-  let contador = Object.keys(carrito).length;
+  //let contador = Object.keys(carrito).length;
+  let contador = carrito.reduce((total, item) => total + item.producto.cantidad, 0);
   document.getElementById('carrito-contador').innerHTML = contador;
 
   localStorage.setItem('carrito', JSON.stringify(carrito));
